@@ -30,7 +30,11 @@ public class Map {
             System.out.printf("%d ", i);
 
             for (int j = 0; j < map[0].length; j++) {
-                System.out.printf("%c ", map[i][j]);
+                if (Positions.positionIsOcupied(i, j)) {
+                    System.out.printf("%c ", Positions.charInPosition(i, j));
+                } else {
+                    System.out.printf("%c ", map[i][j]);
+                }
             }
 
             System.out.print("\n");

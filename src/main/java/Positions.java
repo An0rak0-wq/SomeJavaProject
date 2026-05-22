@@ -8,6 +8,10 @@ public class Positions {
         positionDic.put(String.format("%d, %d", column, row), entity);
     }
 
+    public static void removePosition(int column, int row) {
+        positionDic.remove(String.format("%d, %d", column, row));
+    }
+
     public static boolean positionIsOcupied(int column, int row) {
         return positionDic.containsKey(String.format("%d, %d", column, row));
     }

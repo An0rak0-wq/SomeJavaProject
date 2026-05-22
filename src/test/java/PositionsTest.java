@@ -16,8 +16,8 @@ public class PositionsTest {
         int randRow = random.nextInt(3, 11);
         int randColumn = random.nextInt(3, 11);
 
-        Positions.addPosition(randRow, randColumn, '@');
-        assertEquals(true, Positions.positionIsOcupied(randRow, randColumn));
+        Positions.addPosition(randColumn, randRow, '@');
+        assertEquals(true, Positions.positionIsOcupied(randColumn, randRow));
     }
 
     @Test
@@ -25,7 +25,7 @@ public class PositionsTest {
         int randRow = random.nextInt(3, 11);
         int randColumn = random.nextInt(3, 11);
 
-        assertEquals(false, Positions.positionIsOcupied(randRow, randColumn));
+        assertEquals(false, Positions.positionIsOcupied(randColumn, randRow));
     }
 
     @Test
@@ -33,7 +33,18 @@ public class PositionsTest {
         int randRow = random.nextInt(3, 11);
         int randColumn = random.nextInt(3, 11);
 
-        Positions.addPosition(randRow, randColumn, '@');
-        assertEquals('@', Positions.charInPosition(randRow, randColumn));
+        Positions.addPosition(randColumn, randRow, '@');
+        assertEquals('@', Positions.charInPosition(randColumn, randRow));
+    }
+
+    @Test
+    void removePositionRemovesPosition() {
+        int randRow = random.nextInt(3, 11);
+        int randColumn = random.nextInt(3, 11);
+
+        Positions.addPosition(randColumn, randRow, '@');
+        Positions.removePosition(randColumn, randRow);
+
+        assertFalse(Positions.positionIsOcupied(randColumn, randRow));
     }
 }
