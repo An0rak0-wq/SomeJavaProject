@@ -2,9 +2,10 @@ public class Main {
     public static void main(String[] args) {
         // Will run the game;
         Map mapObj = new Map();
-        char[][] map = mapObj.createEmptyMap(5, 5);
+        char[][] map = mapObj.createEmptyMap(10, 5);
+        map = mapObj.formatMap(map);
 
-        System.out.println(map);
+        mapObj.displayMap(map);
         System.out.println();
     }
 }
