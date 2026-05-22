@@ -5,6 +5,7 @@ public class Main {
         char[][] map = mapObj.createEmptyMap(10, 5);
 
         mapObj.displayMap(map);
+
         System.out.println();
     }
 }
