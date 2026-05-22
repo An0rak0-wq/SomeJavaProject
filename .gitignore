@@ -1,0 +1,15 @@
+# Maven build artifacts
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+release.properties
+
+# IDE files
+.vscode/
+
+# Compiled files
+*.class
+
+# Logs
+*.log
+logs/
