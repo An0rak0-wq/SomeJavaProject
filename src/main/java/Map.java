@@ -5,6 +5,10 @@ public class Map {
     }
     */
 
+    // ANSI Escape Codes
+    String GREY = "\u001B[90m";
+    String RESET = "\u001B[0m";
+
     public char[][] createEmptyMap(int rows, int cols) {
         char[][] map = new char[rows][cols];
 
@@ -21,17 +25,17 @@ public class Map {
         System.out.print("  ");
         
         for (int i = 0; i < map[0].length; i++){
-            System.out.printf("%d ", i);
+            System.out.printf("%s%d%s ", GREY, i, RESET);
         }
 
         System.out.print("\n");
 
         for (int i = 0; i < map.length; i++) {
-            System.out.printf("%d ", i);
+            System.out.printf("%s%d%s ", GREY, i, RESET);
 
             for (int j = 0; j < map[0].length; j++) {
-                if (Positions.positionIsOcupied(i, j)) {
-                    System.out.printf("%c ", Positions.charInPosition(i, j));
+                if (Positions.positionIsOcupied(j, i)) {
+                    System.out.printf("%c ", Positions.charInPosition(j, i));
                 } else {
                     System.out.printf("%c ", map[i][j]);
                 }

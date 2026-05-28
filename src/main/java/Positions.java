@@ -5,19 +5,19 @@ public class Positions {
     private static Map<String, Character> positionDic = new HashMap<>();
 
     public static void addPosition(int column, int row, char entity) {
-        positionDic.put(String.format("%d, %d", column, row), entity);
+        positionDic.put(String.format("%d,%d", column, row), entity);
     }
 
     public static void removePosition(int column, int row) {
-        positionDic.remove(String.format("%d, %d", column, row));
+        positionDic.remove(String.format("%d,%d", column, row));
     }
 
     public static boolean positionIsOcupied(int column, int row) {
-        return positionDic.containsKey(String.format("%d, %d", column, row));
+        return positionDic.containsKey(String.format("%d,%d", column, row));
     }
 
     public static char charInPosition(int column, int row) {
-        String coord = String.format("%d, %d", column, row);
+        String coord = String.format("%d,%d", column, row);
         return positionDic.get(coord);
     }
 
