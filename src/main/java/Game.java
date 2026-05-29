@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Game {
     // Controls global event (movement)
 
@@ -21,12 +23,25 @@ public class Game {
 
                 return true;
             } else {
-                System.out.printf("%sThis position is occupied!%s\n", YELLOW, RESET);
+                if (Entity == 'P') {
+                    System.out.printf("%sThis position is occupied!%s\n", YELLOW, RESET);
+                }
             }
         } else {
-            System.out.printf("%sThis position is out of your range!%s\n", YELLOW, RESET);
+            if (Entity == 'P') {
+                System.out.printf("%sThis position is out of your range!%s\n", YELLOW, RESET);
+            }
         }
 
         return false;
+    }
+
+    public Enemy FindEnemyAtPosition(ArrayList<Enemy> enemies, int column, int row) {
+        for (Enemy enemy : enemies) {
+            if (enemy.column == column && enemy.row == row) {
+                return enemy;
+            }
+        }
+        return null;
     }
 }
